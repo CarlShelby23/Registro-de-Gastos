@@ -8,15 +8,19 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import com.example.registrodegastos.data.GastoFileManager
 import com.example.registrodegastos.model.Gasto
 import com.example.registrodegastos.ui.AgregarGastoScreen
 import com.example.registrodegastos.ui.HistorialScreen
 import com.example.registrodegastos.ui.ResumenScreen
 import com.example.registrodegastos.ui.theme.RegistroDeGastosTheme
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +36,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppPrincipal() {
     var pantallaActual by remember { mutableStateOf("Agregar") }
-
-    // Datos falsos para prueba
-    val gastosDePrueba = listOf(
-        Gasto("1", 50.0, "Café", "17/03/2026"),
-        Gasto("2", 20.0, "Transporte", "17/03/2026"),
-        Gasto("3", 100.0, "Cine", "17/03/2026"),
-        Gasto("4", 25.0, "Snacks", "17/03/2026")
-    )
+    val context = LocalContext.current
+    val fileManager = remember { GastoFileManager() }
+    var listaGastos by remember { mutableStateOf(listOf<Gasto>()) }
+    LaunchedEffect(Unit) {
+        listaGastos = fileManager.leerGastos(context)
+    }
 
     Scaffold(
         bottomBar = {
@@ -65,22 +67,39 @@ fun AppPrincipal() {
             }
         }
     ) { paddingValues ->
-        // Cambia el contenido
         Surface(modifier = Modifier.padding(paddingValues)) {
             when (pantallaActual) {
                 "Agregar" -> AgregarGastoScreen(
                     onCerrarClick = {},
-                    onGuardarClick = { _, _ -> pantallaActual = "Historial" }
+                    onGuardarClick = { montoString, categoria ->
+                        val nuevoMonto = montoString.toDoubleOrNull() ?: 0.0
+                        val fechaActual = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+                        
+                        val nuevoGasto = Gasto(
+                            id = System.currentTimeMillis().toString(),
+                            monto = nuevoMonto,
+                            categoria = categoria,
+                            fecha = fechaActual
+                        )
+                        val nuevaLista = listaGastos + nuevoGasto
+                        listaGastos = nuevaLista
+                        fileManager.guardarGastos(context, nuevaLista)
+                        pantallaActual = "Historial"
+                    }
                 )
                 "Historial" -> HistorialScreen(
-                    gastos = gastosDePrueba,
+                    gastos = listaGastos,
                     onBackClick = { pantallaActual = "Agregar" }
                 )
-                "Resumen" -> ResumenScreen(
-                    totalHoy = "195.00",
-                    totalSemana = "680.00",
-                    onBackClick = { pantallaActual = "Historial" }
-                )
+                "Resumen" -> {
+                    val totalGasto = listaGastos.sumOf { it.monto }
+                    
+                    ResumenScreen(
+                        totalHoy = totalGasto.toString(),
+                        totalSemana = "0.00",
+                        onBackClick = { pantallaActual = "Historial" }
+                    )
+                }
             }
         }
     }
