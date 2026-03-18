@@ -1,7 +1,7 @@
-# 💸 Registro de Gastos App 
+# 💸 SpendNote 
 ### 🎓 Proyecto de Desarrollo Móvil - Universidad Veracruzana
 
-Una aplicación de Android moderna construida con **Kotlin** y **Jetpack Compose**, diseñada específicamente para ayudar a los estudiantes a tomar el control de sus finanzas personales de manera sencilla, rápida y visual.
+**SpendNote** es una aplicación de Android moderna construida con **Kotlin** y **Jetpack Compose**, diseñada específicamente para ayudar a los estudiantes a tomar el control de sus finanzas personales de manera sencilla, rápida y visual.
 
 ---
 
@@ -30,27 +30,25 @@ Una aplicación de Android moderna construida con **Kotlin** y **Jetpack Compose
 
 | Registro de Gastos | Historial por Semanas | Resumen de Totales |
 | :---: | :---: | :---: |
-|![Agregar Gasto](https://github.com/user-attachments/assets/6c6ef73f-4d67-49f7-b4cb-763da5481424) |![Historial Semanal](https://github.com/user-attachments/assets/bd2f9b6e-4a55-4043-863e-3e3e67529981) | ![Resumen](https://github.com/user-attachments/assets/42f673c2-0d94-4648-b69d-cd21c30f5c28) 
-
+| ![Agregar Gasto](https://github.com/user-attachments/assets/6c6ef73f-4d67-49f7-b4cb-763da5481424) | ![Historial Semanal](https://github.com/user-attachments/assets/bd2f9b6e-4a55-4043-863e-3e3e67529981) | ![Resumen](https://github.com/user-attachments/assets/42f673c2-0d94-4648-b69d-cd21c30f5c28) |
 
 ---
 
 ## 🔧 Instalación y Uso
 
-1.  Clona este repositorio:  
-    `https://github.com/CarlShelby23/Registro-de-Gastos.git`
-2.  Abre el proyecto en **Android Studio (Ladybug o superior)**.
-3.  Sincroniza el proyecto con los archivos de Gradle.
-4.  Ejecuta la app en un emulador o dispositivo físico con **Android 8.0 (API 26)** o superior.
+1.  **Descarga el ejecutable:** Puedes encontrar el archivo `.apk` listo para instalar en la sección de [Releases](https://github.com/CarlShelby23/Registro-de-Gastos/releases).
+2.  **Clona este repositorio:** `https://github.com/CarlShelby23/Registro-de-Gastos.git`
+3.  Abre el proyecto en **Android Studio (Ladybug o superior)**.
+4.  Ejecuta la app en un dispositivo físico con **Android 8.0 (API 26)** o superior.
 
 ---
 
 ## 👨‍💻 Autores
-* **José Carlos Amador Suárez** 
+* **José Carlos Amador Suárez**
 * **Ernesto Rafael Díaz Caraza**
 * **Alvaro Mendoza Prado**
 
-Estudiantes de la carrera de Ingeniería en Sistemas y Tecnologías de la Información - **Universidad Veracruzana** Xalapa, Veracruz, México.
+Ingeniería en Sistemas y Tecnologías de la Información - **Universidad Veracruzana** Xalapa, Veracruz, México.
 
 ---
 *Este proyecto fue desarrollado bajo los lineamientos de la experiencia educativa: Desarrollo Móvil.*
