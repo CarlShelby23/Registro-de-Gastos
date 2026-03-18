@@ -30,7 +30,7 @@ Una aplicación de Android moderna construida con **Kotlin** y **Jetpack Compose
 
 | Registro de Gastos | Historial por Semanas | Resumen de Totales |
 | :---: | :---: | :---: |
-|![Agregar Gasto](https://github.com/user-attachments/assets/6c6ef73f-4d67-49f7-b4cb-763da5481424) |![Resumen](https://github.com/user-attachments/assets/42f673c2-0d94-4648-b69d-cd21c30f5c28) |![Historial Semanal](https://github.com/user-attachments/assets/bd2f9b6e-4a55-4043-863e-3e3e67529981) |
+|![Agregar Gasto](https://github.com/user-attachments/assets/6c6ef73f-4d67-49f7-b4cb-763da5481424) |![Historial Semanal](https://github.com/user-attachments/assets/bd2f9b6e-4a55-4043-863e-3e3e67529981) | ![Resumen](https://github.com/user-attachments/assets/42f673c2-0d94-4648-b69d-cd21c30f5c28) 
 
 
 ---
