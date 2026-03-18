@@ -1,5 +1,5 @@
 # 💸 Registro de Gastos App 
-### 🎓 Proyecto de Gestión de Tecnologías - Universidad Veracruzana
+### 🎓 Proyecto de Desarrollo Móvil - Universidad Veracruzana
 
 Una aplicación de Android moderna construida con **Kotlin** y **Jetpack Compose**, diseñada específicamente para ayudar a los estudiantes a tomar el control de sus finanzas personales de manera sencilla, rápida y visual.
 
